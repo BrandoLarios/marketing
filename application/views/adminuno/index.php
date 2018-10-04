@@ -59,9 +59,9 @@
             <main class="col-md-10">
                 <div class="container">
                     <h2><center>Agregar usuario</center></h2><br>
-                    <form action="">
+                    <form action="<?= base_url('index.php/admin/user/create') ?>" method="POST">
                         <h5 class="card-title" for="">Datos personales y de contacto</h5>
-                        <!-- Nombre, Apellido y Correo-->
+                        <!-- Nombre, Apellido y Correo -->
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="input-group">
@@ -88,7 +88,7 @@
                                 </div> 
                             </div>
                         </div><br>
-                        <!-- Estado, municipio y código postal-->
+                        <!-- Estado, municipio y código postal -->
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="input-group">
@@ -115,7 +115,7 @@
                                 </div>
                             </div>
                         </div><br>
-                        <!-- Dirección, fecha de nacimiento y fecha de contrato-->
+                        <!-- Dirección, fecha de nacimiento y fecha de contrato -->
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="input-group">
@@ -142,7 +142,7 @@
                                 </div> 
                             </div>
                         </div><br>
-                        <!-- Numero de celular y telefono-->
+                        <!-- Numero de celular y telefono -->
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="input-group">
@@ -169,21 +169,54 @@
                                 </div>-->
                             </div>
                         </div><br>
-                        <h5 class="card-title" for="">Roles de trabajo</h5>
-                        <!-- Cliente, administrador y community manager -->
+                        <h5 class="card-title" for="">Roles de usuarios</h5>
+                        <!-- Administrador principal y de empresa y cliente -->
                         <div class="row">
                             <div class="col-md-4">
-                                <div class="input-group mb-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="checkbox">
+                                        </div>
+                                    </div>
+                                    <label class="form-control">Administrador principal</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="checkbox">
+                                        </div>
+                                    </div>
+                                    <label class="form-control">Administrador de empresa</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="checkbox">
+                                        </div>
+                                    </div>
+                                    <label class="form-control">Cliente</label>
+                                </div> 
+                            </div>
+                        </div><br>
+                        <!-- community manager, generador de contenidos y diseñador -->
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="input-group">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
                                             <input type="checkbox">
                                         </div>
                                     </div>
                                     <label class="form-control">Community manager</label>
-                                </div>
+                                </div> 
                             </div>
                             <div class="col-md-4">
-                                <div class="input-group mb-3">
+                                <div class="input-group">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
                                             <input type="checkbox">
@@ -193,49 +226,37 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="input-group mb-3">
+                                <div class="input-group">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
                                             <input type="checkbox">
                                         </div>
                                     </div>
                                     <label class="form-control">Diseñador</label>
-                                </div> 
+                                </div>
                             </div>
+                            
                         </div><br>
-                        <!-- Generador de contenidos y diseñador -->
+                        <!-- Botones para regresar a home y agregar al ususario -->
                         <div class="row">
-                            <div class="col-md-4">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <input type="checkbox">
-                                        </div>
-                                    </div>
-                                    <label class="form-control">Generador de contenidos</label>
-                                </div>
+                            <div class="col-md-4">            
+                                <a href="<?= base_url('index.php/admin/user/create') ?>" class="btn btn-warning">
+                                    <i class="fa fa-arrow-left"></i>  Regresar
+                                </a>                                
                             </div>
                             <div class="col-md-4">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <input type="checkbox">
-                                        </div>
-                                    </div>
-                                    <label class="form-control">Diseñador</label>
-                                </div>
+                                <!-- <center>
+                                    <button class="btn btn-success" type="submit">
+                                        <i class="fa fa-save"></i> Agregar 
+                                    </button>
+                                </center> -->
                             </div>
                             <div class="col-md-4">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <input type="checkbox">
-                                        </div>
-                                    </div>
-                                    <label class="form-control">Diseñador</label>
-                                </div> 
+                                <button class="btn btn-success" type="submit">
+                                    <i class="fa fa-save"></i> Agregar
+                                </button>
                             </div>
-                        </div><br>
+                        </div>
                     </form>
                 </div> 
             </main>
