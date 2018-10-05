@@ -1,24 +1,26 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed') ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin-Pricnipal</title>
+    <title>Agregar usuario</title>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>">
     <!--<link rel="stylesheet" type="text/css" href="<?php //echo base_url('assets/css/bootstrap.min.css.map'); ?>">-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
 </head>
 <body>
-    <!-- Navbar -->
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <!-- Apartado para imagen y Nombre -->
         <a class="navbar-brand" href="">
             <i class="far fa-image"></i>
             Brando Larios
         </a>
+        <!-- Apartados de usuarios, empresas y campañas -->
+
+
         <!-- Mensajeria, notificaciones y configuración de usuario -->
         <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
@@ -50,14 +52,9 @@
             </ul>
         </div>
     </nav><br>
-    <!-- content -->
-    <div class="content-fluid">
-        <div class="row">
-            <nav class="col-md-2">
-                
-            </nav>
-            <main class="col-md-10">
-                <div class="container">
+
+    <div>
+    <div class="container">
                     <h2><center>Agregar usuario</center></h2><br>
                     <form action="<?= base_url('index.php/admin/user/create') ?>" method="POST">
                         <h5 class="card-title" for="">Datos personales y de contacto</h5>
@@ -258,14 +255,11 @@
                             </div>
                         </div>
                     </form>
-                </div> 
-            </main>
-        </div>
+                </div>
     </div>
-    
-    <script src="<?php echo base_url('assets/js/jquery-3.3.1.min.js'); ?>"></script>
+
+    script src="<?php echo base_url('assets/js/jquery-3.3.1.min.js'); ?>"></script>
     <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
     <!-- <script src="<?php //echo base_url('assets/js/bootstrap.min.js.map'); ?>"></script> -->
-
 </body>
 </html>
