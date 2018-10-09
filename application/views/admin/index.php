@@ -12,49 +12,34 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <!-- Apartado para imagen y Nombre -->
-        <a class="navbar-brand" href="">
-            <i class="far fa-image"></i>
-            Brando Larios
-        </a>
-        <!-- Apartados de usuarios, empresas y campañas -->
-        
-
-        <!-- Mensajeria, notificaciones y configuración de usuario -->
-        <div class="collapse navbar-collapse justify-content-end">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa fa-home navbar-icon"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa fa-bell navbar-icon"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa fa-comments navbar-icon"></i>
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-cog navbar-icon"></i>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-            </ul>
+    <!-- Aprtado visual para el desplazamiento del administrador -->
+    <?php $this->load->view("roles_nav/admin.php") ?>    
+    <!-- Contenido principal -->
+    <div class="container">
+        <div class="row">
+            <a class="col-md-6" href="">
+                <div class="card" style="width: 18rem;">
+                    <center>
+                        <i class="fa fa-bell fa-2x"></i>
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                        </div>
+                    </center>
+                </div>
+            </a>
+            <a class="col-md-6" href="">
+                <div class="card" style="width: 18rem;">
+                    <center>
+                        <i class="fa fa-bell fa-2x"></i>
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                        </div>
+                    </center>
+                </div>
+            </a>
         </div>
-    </nav><br>
-    <!-- content -->
-    
+        
+    </div>
     
     <script src="<?php echo base_url('assets/js/jquery-3.3.1.min.js'); ?>"></script>
     <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>

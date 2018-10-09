@@ -12,7 +12,7 @@ class Admin extends CI_Controller {
     
 
     public function index () {
-        $this->load->view('admin/users/new');
+        $this->load->view('admin/index');
     }
 
     public function newuser () {
@@ -24,16 +24,23 @@ class Admin extends CI_Controller {
             "name"              => $this->input->post('name'),
             "lastname"          => $this->input->post('lastname'),
             "email"             => $this->input->post('email'),
+            "username"          => $this->input->post('name').$this->input->post('lastname'),
+            "password"          => 'admindev',
+            "contract_date"     => $this->input->post('contract_date'), 
+            "register_date"     => getdate(),
             "state"             => $this->input->post('state'),
             "municipality"      => $this->input->post('municipality'),
-            "cp"                => $this->input->post('cp'),
             "direction"         => $this->input->post('direction'),
+            "cp"                => $this->input->post('cp'),
             "phone"             => $this->input->post('phone'),
             "cellphone"         => $this->input->post('cellphone'),
-            "borndate"          => $this->input->post('borndate'),
-            "contract_date"     => $this->input->post('contract_date'),
-            "name"              => $this->input->post('name'),
+            //"image"             => $this->input->post('image'),
+            "CURP"              => $this->input->post('CURP'),
+            "RFC"              => $this->input->post('RFC'),
+            "deleted"           => '0'
         );
+        $this->AdminModel->adduser($user);
+        $this->load->view('admin/users/new');
     }
     
 }
