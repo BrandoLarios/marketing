@@ -16,17 +16,17 @@
 
     <div class="container">
         <h2><center>Agregar usuario</center></h2><br>
-        <form action="<?= base_url('index.php/admin/adduser') ?>" method="POST">
-            <h5 class="card-title" for="">Datos personales y de contacto</h5>
-            <!-- Nombre y apellido -->
+        <form action="<?= base_url('index.php/admin/add') ?>" method="POST">  
+        <!-- Inicio de información personal -->
+            <h5 class="card-title" for="">Información personales</h5>
+            <!-- Nombre, apellido y CURP -->
             <div class="row">
                 <div class="col-md-4">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <i class="fa fa-address-card input-group-text"></i>
-                            <!--<span class="input-group-text" id="basic-addon1">Nombre:</span>-->
+                            <span class="input-group-text" id="basic-addon1">Nombre:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="name" placeholder="" required>
+                        <input class="form-control" type="text" id="" name="name" placeholder="Primer nombre" required>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -34,37 +34,34 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Apellido:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="lastname" placeholder="" required>
+                        <input class="form-control" type="text" id="" name="lastname" placeholder="Primer apellido" required>
                     </div>
                 </div>
-            </div><br>
-            <!-- CURP y correo -->
-            <div class="row">
                 <div class="col-md-4">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">CURP:</span>
                         </div>
-                        <input class="form-control" class="" type="text" id="" name="CURP">
+                        <input class="form-control" type="text" id="" name="CURP" placeholder="Ingrese 18 caracteres">
                     </div>
                 </div>
+            </div><br>
+            <!-- Correo, numero de telefono y celular -->
+            <div class="row">
                 <div class="col-md-4">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Correo:</span>
                         </div>
-                        <input class="form-control" type="email" id="" name="email" placeholder="" required>
+                        <input class="form-control" type="email" id="" name="email" placeholder="ejemplo@ejem.plo" required>
                     </div>
                 </div> 
-            </div><br>
-            <!-- Numero de telefono y celular -->
-            <div class="row">
                 <div class="col-md-4">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Telefono:</span>
                         </div>
-                        <input class="form-control" type="tel" id="" name="phone" placeholder="" pattern="[0-9]{7}">
+                        <input class="form-control" type="tel" id="" name="phone" placeholder="5558855" pattern="[0-9]{7}">
                     </div> 
                 </div>          
                 <div class="col-md-4">
@@ -72,11 +69,15 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Celular:</span>
                         </div>
-                        <input class="form-control" type="tel" id="" name="cellphone" placeholder="" pattern="[0-9]{10}" required>
+                        <input class="form-control" type="tel" id="" name="cellphone" placeholder="5558885588" pattern="[0-9]{10}" required>
                     </div>
                 </div>
             </div><br>
-            <!-- Dirección y colonia -->
+        <!-- Fin de información personal -->
+
+        <!-- Inicio de información de residencial -->
+            <!-- Dirección, colonia y municipio -->
+            <h5 class="card-title" for="">Información residencial</h5>
             <div class="row">
                 <div class="col-md-4">
                     <div class="input-group">
@@ -91,40 +92,41 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Colonia:</span>
                         </div>
-                        <input class="form-control" type="tetx" id="" name="" placeholder="">
+                        <input class="form-control" type="tetx" id="" name="colony" placeholder="No abrevie el nombre">
                     </div>
                 </div>
-            </div><br>
-            <!-- Municipio y estado -->
-            <div class="row">
                 <div class="col-md-4">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Municipio:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="municipality" placeholder="" required>
+                        <input class="form-control" type="text" id="" name="municipality" placeholder="No abrevie el nombre" required>
                     </div>
                 </div>
+            </div><br>
+            <!-- Estado y codigo postal -->
+            <div class="row">
                 <div class="col-md-4">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Estado:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="state" placeholder="" required>
+                        <input class="form-control" type="text" id="" name="state" placeholder="No abrevie el nombre" required>
                     </div>
                 </div>
-            </div><br>
-            <!-- Código postal -->
-            <div class="row">
                 <div class="col-md-4">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Código postal:</span>
                         </div>
-                        <input class="form-control" type="number" id="" name="cp" placeholder="" min="00000" max="99999" pattern="[0-9]{5}" required>
+                        <input class="form-control" type="number" id="" name="cp" placeholder="58585" min="00000" max="99999" pattern="[0-9]{5}" required>
                     </div>
                 </div>
             </div><br>
+        <!-- Fin de información de residencial -->
+
+        <!-- Inicio de información laboral -->
+            <h5 class="card-title" for="">Información laboral</h5>
             <!-- RFC y fecha de contratación -->
             <div class="row">
                 <div class="col-md-4">
@@ -132,7 +134,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">RFC:</span>
                         </div>
-                        <input class="form-control" class="" type="text" id="" name="RFC">
+                        <input class="form-control" type="text" id="" name="RFC" required>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -140,32 +142,27 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Fecha de contratación:</span>
                         </div>
-                        <input class="form-control" type="date" id="" name="contract_date" min="1960-01-01" max="2000-12-31" value="<?php echo date('Y-m-d');?>" required>
+                        <input class="form-control" type="date" id="" name="contract_date" min="1960-01-01" value="<?php echo date('Y-m-d');?>" required>
                     </div> 
                 </div>
-                
-            </div><br>
-            <!-- Imagen -->
-            <!--<div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">Imagen:</span>
+                            <span class="input-group-text" id="basic-addon1">Horario laboral:</span>
                         </div>
-                        <input style="margin:5px;" class="" type="file" id="" name="image">
-                    </div>
+                        <input class="form-control" type="time" id="" name="inhour">
+                        <input class="form-control" type="time" id="" name="outhour">
+                    </div> 
                 </div>
-            </div><br>-->
-            
+            </div><br>
+        <!-- Inicio de información laboral -->
+
             <!-- Botones para regresar a home y agregar al ususario -->
             <div class="row">
-                <div class="col-md-6">            
-                    <a href="<?= base_url('index.php/admin/user/create') ?>" class="btn btn-warning">
-                        <i class="fa fa-arrow-left"></i>  Regresar
-                    </a>                                
-                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
                 <div class="col-md-4">
-                    <button class="btn btn-success" type="submit">
+                    <button class="btn btn-success float-right" type="submit">
                         Agregar <i class="fa fa-save"></i>
                     </button>
                 </div>

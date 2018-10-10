@@ -18,8 +18,8 @@
                         Usuarios <i class="fa fa-users navbar-icon"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="<?= base_url('index.php/admin/newuser') ?>">Agregar usuario</a>
-                        <a class="dropdown-item" href="#">Administrar usuarios</a>
+                        <a class="dropdown-item" href="<?= base_url('index.php/admin/new') ?>">Agregar usuario</a>
+                        <a class="dropdown-item" href="<?= base_url('index.php/admin/list') ?>">Administrar usuarios</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">

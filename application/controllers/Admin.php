@@ -15,32 +15,44 @@ class Admin extends CI_Controller {
         $this->load->view('admin/index');
     }
 
-    public function newuser () {
+    public function new () {
         $this->load->view('admin/users/new');
     }
 
-    public function adduser () {
+    public function add () {
         $user = array (
             "name"              => $this->input->post('name'),
             "lastname"          => $this->input->post('lastname'),
             "email"             => $this->input->post('email'),
-            "username"          => $this->input->post('name').$this->input->post('lastname'),
-            "password"          => 'admindev',
-            "contract_date"     => $this->input->post('contract_date'), 
-            "register_date"     => getdate(),
-            "state"             => $this->input->post('state'),
-            "municipality"      => $this->input->post('municipality'),
-            "direction"         => $this->input->post('direction'),
-            "cp"                => $this->input->post('cp'),
+            "CURP"              => $this->input->post('CURP'),
             "phone"             => $this->input->post('phone'),
             "cellphone"         => $this->input->post('cellphone'),
-            //"image"             => $this->input->post('image'),
-            "CURP"              => $this->input->post('CURP'),
-            "RFC"              => $this->input->post('RFC'),
+
+            "state"             => $this->input->post('state'),
+            "municipality"      => $this->input->post('municipality'),
+            "colony"            => $this->input->post('colony'),
+            "direction"         => $this->input->post('direction'),
+            "cp"                => $this->input->post('cp'),
+
+            "contract_date"     => $this->input->post('contract_date'),
+            "RFC"               => $this->input->post('RFC'),
+            "inhour"            => $this->input->post('inhour'),
+            "outhour"           => $this->input->post('outhour'),
+
+            "username"          => $this->input->post('name').$this->input->post('lastname'),
+            "password"          => $this->input->post('CURP'),
+            "register_date"     => getdate(),
             "deleted"           => '0'
         );
-        $this->AdminModel->adduser($user);
-        $this->load->view('admin/users/new');
+
+        $this->AdminModel->add($user);
+        $data['users']=$this->AdminModel->getall();
+        $this->load->view('admin/users/list',$data);
+    }
+
+    public function list (){
+        $data['users']=$this->AdminModel->getall();
+        $this->load->view('admin/users/list',$data);
     }
     
 }

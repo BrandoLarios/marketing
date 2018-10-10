@@ -2,44 +2,62 @@
 
 class AdminModel extends CI_Model{
 
-    public function adduser ($user) {
-        $this->db->query("INSERT INTO users(
-            name,
-            lastname,
-            CURP,
-            RFC,
-            email,
-            username,
-            password,
-            contract_date,
-            register_date,
-            state,
-            municipality,
-            direction,
-            cp,
-            phone,
+    public function add ($user) {
+        return $this->db->query("INSERT INTO users(
+            name,         
+            lastname,     
+            email,        
+            CURP,         
+            phone,        
             cellphone,
-            deleted
+
+            state,        
+            municipality, 
+            colony,       
+            direction,    
+            cp, 
+
+            contract_date,
+            RFC,          
+            inhour,       
+            outhour, 
+
+            username,     
+            password,     
+            register_date,
+            deleted      
         ) 
         VALUES (
             '$user[name]',
             '$user[lastname]',
-            '$user[CURP]',
-            '$user[RFC]',
             '$user[email]',
-            '$user[username]',
-            '$user[password]',
-            '$user[contract_date]',
-            now(),
-            '$user[state]',
-            '$user[municipality]',
-            '$user[direction]',
-            '$user[cp]',
-            '$user[phone]',
-            '$user[cellphone]',
+            '$user[CURP]',
+            '$user[phone]', 
+            '$user[cellphone]', 
+             
+            '$user[state]', 
+            '$user[municipality]', 
+            '$user[colony]', 
+            '$user[direction]', 
+            $user[cp],
+
+            '$user[contract_date]', 
+            '$user[RFC]', 
+            '$user[inhour]', 
+            '$user[outhour]',
+
+            '$user[username]', 
+            '$user[password]', 
+            '$user[register_date]', 
             '$user[deleted]'
         )");
-        
     }
 
+    public function getall() {
+        return $this->db->query( 
+            "SELECT name,lastname,email,CURP,RFC,contract_date
+            FROM users
+            order by register_date desc"
+        )->result();
+    }
 }
