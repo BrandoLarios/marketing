@@ -36,6 +36,7 @@
                 </tr>
             
                 <?php foreach($users as $user): ?>
+                <tr>
                     <th class="d-dm-table-cell d-done"><?= htmlentities($user->name)?></th>
                     <th class="d-dm-table-cell d-done"><?= htmlentities($user->lastname)?></th>
                     <th class="d-dm-table-cell d-done"><?= htmlentities($user->email)?></th>
@@ -47,6 +48,7 @@
                         <a class="btn btn-warning" href=""><i class="fa fa-edit"></i> Editar</a>
                         <a class="btn btn-danger" href=""><i class="fa fa-trash-alt"></i> Eliminar</a>
                     </th>
+                </tr><br>
                 <?php endforeach; ?>
             
             </table>
