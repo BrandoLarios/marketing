@@ -17,25 +17,26 @@
     <!-- Contenido principal -->
     <div class="container">
         <div class="row">
-            <a class="col-md-6" href="">
-                <div class="card" style="width: 18rem;">
-                    <center>
+            <a class="card col-md-6" href="">
+                <center>
+                    <div class="" style="width: 18rem;">
                         <i class="fa fa-bell fa-2x"></i>
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title">Mensajes</h5>
                         </div>
-                    </center>
-                </div>
+                    </div>
+                </center>
             </a>
-            <a class="col-md-6" href="">
-                <div class="card" style="width: 18rem;">
-                    <center>
+            <!--<div class="col-md-1"></div>-->
+            <a class="card col-md-6" href="">
+                <center>
+                    <div class="" style="width: 18rem;">
                         <i class="fa fa-bell fa-2x"></i>
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title">Notificaciones</h5>
                         </div>
-                    </center>
-                </div>
+                    </div>
+                </center>
             </a>
         </div>
         

@@ -20,15 +20,16 @@
             <h5 class="card-title" for="">Datos personales y de contacto</h5>
             <!-- Nombre y apellido -->
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">Nombre:</span>
+                            <i class="fa fa-address-card input-group-text"></i>
+                            <!--<span class="input-group-text" id="basic-addon1">Nombre:</span>-->
                         </div>
                         <input class="form-control" type="text" id="" name="name" placeholder="" required>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Apellido:</span>
@@ -37,37 +38,85 @@
                     </div>
                 </div>
             </div><br>
-            <!-- Numero de telefono y celular -->
+            <!-- CURP y correo -->
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">Telefono:</span>
+                            <span class="input-group-text" id="basic-addon1">CURP:</span>
                         </div>
-                        <input class="form-control" type="tel" id="" name="phone" placeholder="Ejemplo: 8885555" pattern="[0-9]{7}" required>
-                        <span class="validity"></span>
-                    </div> 
-                </div>          
-                <div class="col-md-6">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">Celular:</span>
-                        </div>
-                        <input class="form-control" type="tel" id="" name="cellphone" placeholder="Ejemplo: 8885558855" pattern="[0-9]{10}" required>
+                        <input class="form-control" class="" type="text" id="" name="CURP">
                     </div>
                 </div>
-            </div><br>
-            <!-- Correo y código postal -->
-            <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Correo:</span>
                         </div>
-                        <input class="form-control" type="email" id="" name="email" placeholder="Ejemplo: example@dev.com" required>
+                        <input class="form-control" type="email" id="" name="email" placeholder="" required>
+                    </div>
+                </div> 
+            </div><br>
+            <!-- Numero de telefono y celular -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Telefono:</span>
+                        </div>
+                        <input class="form-control" type="tel" id="" name="phone" placeholder="" pattern="[0-9]{7}">
+                    </div> 
+                </div>          
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Celular:</span>
+                        </div>
+                        <input class="form-control" type="tel" id="" name="cellphone" placeholder="" pattern="[0-9]{10}" required>
                     </div>
                 </div>
-                <div class="col-md-6">
+            </div><br>
+            <!-- Dirección y colonia -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Dirección:</span>
+                        </div>
+                        <input class="form-control" type="tetx" id="" name="" placeholder="Calle y número" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Colonia:</span>
+                        </div>
+                        <input class="form-control" type="tetx" id="" name="" placeholder="">
+                    </div>
+                </div>
+            </div><br>
+            <!-- Municipio y estado -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Municipio:</span>
+                        </div>
+                        <input class="form-control" type="text" id="" name="municipality" placeholder="" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Estado:</span>
+                        </div>
+                        <input class="form-control" type="text" id="" name="state" placeholder="" required>
+                    </div>
+                </div>
+            </div><br>
+            <!-- Código postal -->
+            <div class="row">
+                <div class="col-md-4">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Código postal:</span>
@@ -76,36 +125,17 @@
                     </div>
                 </div>
             </div><br>
-            <!-- Estado y municipio -->
+            <!-- RFC y fecha de contratación -->
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">Estado:</span>
+                            <span class="input-group-text" id="basic-addon1">RFC:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="state" placeholder="" required>
+                        <input class="form-control" class="" type="text" id="" name="RFC">
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">Municipio:</span>
-                        </div>
-                        <input class="form-control" type="text" id="" name="municipality" placeholder="" required>
-                    </div>
-                </div>
-            </div><br>
-            <!-- Dirección (colonia, calle y número) y fecha de nacimiento y de contratación -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">Dirección:</span>
-                        </div>
-                        <input class="form-control" type="tetx" id="" name="cellphone" placeholder="Colonia, calle y número" required>
-                    </div>
-                </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Fecha de contratación:</span>
@@ -126,25 +156,7 @@
                     </div>
                 </div>
             </div><br>-->
-            <!-- CURP y RFC -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">CURP:</span>
-                        </div>
-                        <input class="form-control" class="" type="text" id="" name="CURP">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">RFC:</span>
-                        </div>
-                        <input class="form-control" class="" type="text" id="" name="RFC">
-                    </div>
-                </div>
-            </div><br>
+            
             <!-- Botones para regresar a home y agregar al ususario -->
             <div class="row">
                 <div class="col-md-6">            

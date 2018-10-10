@@ -54,7 +54,7 @@
                     <a class="nav-link" href="#">
                         <i class="fa fa-bell navbar-icon"></i>
                     </a>
-                </li>
+                </li>   
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="fa fa-comments navbar-icon"></i>
