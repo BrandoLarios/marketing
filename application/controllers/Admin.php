@@ -9,16 +9,11 @@ class Admin extends CI_Controller {
 		$this->load->database();
 		
 	}
-    
-
-    public function index () {
-        $this->load->view('admin/index');
-    }
-
+    //Vista
     public function new () {
         $this->load->view('admin/users/new');
     }
-
+    //Modelo
     public function add () {
         $user = array (
             "name"              => $this->input->post('name'),
@@ -49,10 +44,20 @@ class Admin extends CI_Controller {
         $data['users']=$this->AdminModel->getall();
         $this->load->view('admin/users/list',$data);
     }
-
+    //Vista
     public function list (){
         $data['users']=$this->AdminModel->getall();
         $this->load->view('admin/users/list',$data);
     }
+    //Vista 
+    public function edit ($id = null){
+        if($id == null){
+            redirect(base_url('index.php/admin/medical/list'));
+        }else{
+            $data['user'] = $this->AdminModel->getuser();
+            $this->load->view('admin/users/list',$data);
+        }
+    }
+    //Modelo
     
 }

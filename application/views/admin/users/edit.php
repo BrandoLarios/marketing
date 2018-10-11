@@ -26,7 +26,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Nombre:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="name" placeholder="Primer nombre" required>
+                        <input class="form-control" type="text" id="" name="name" placeholder="Primer nombre" required value="<?= (isset($user['name'])) ? $user['name'] : '' ?>">
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -34,7 +34,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Apellido:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="lastname" placeholder="Primer apellido" required>
+                        <input class="form-control" type="text" id="" name="lastname" placeholder="Primer apellido" required value="<?= (isset($user['lastname'])) ? $user['lastname'] : '' ?>">
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -42,7 +42,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">CURP:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="CURP" placeholder="Ingrese 18 caracteres" required>
+                        <input class="form-control" type="text" id="" name="CURP" placeholder="Ingrese 18 caracteres" required value="<?= (isset($user['CURP'])) ? $user['CURP'] : '' ?>">
                     </div>
                 </div>
             </div><br>

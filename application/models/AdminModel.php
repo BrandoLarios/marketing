@@ -3,7 +3,8 @@
 class AdminModel extends CI_Model{
 
     public function add ($user) {
-        return $this->db->query("INSERT INTO users(
+        return $this->db->query(
+            "INSERT INTO users(
             name,         
             lastname,     
             email,        
@@ -26,8 +27,8 @@ class AdminModel extends CI_Model{
             password,     
             register_date,
             deleted      
-        ) 
-        VALUES (
+            ) 
+            VALUES (
             '$user[name]',
             '$user[lastname]',
             '$user[email]',
@@ -50,14 +51,23 @@ class AdminModel extends CI_Model{
             '$user[password]', 
             '$user[register_date]', 
             '$user[deleted]'
-        )");
+            )"
+        );
     }
 
     public function getall() {
         return $this->db->query( 
-            "SELECT name,lastname,email,CURP,RFC,contract_date
+            "SELECT *
             FROM users
             order by register_date desc"
         )->result();
+    }
+
+    public function getuser($id){
+        return $this->db->query(
+            "SELECT * 
+            FROM users
+            WHERE id=$id"
+        );
     }
 }

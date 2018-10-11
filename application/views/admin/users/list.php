@@ -14,13 +14,13 @@
     <?php $this->load->view("roles_nav/admin.php") ?>
 
     <div class="container">
-        <h2><center>Lista de usuarios</center></h2><br>
+        <h2>Lista de usuarios</h2><br>
         <div class="row">
             <div class="col-md-6">
                 <a class="btn btn-warning" href="#"><i class="fa fa-arrow-left"></i> Dashboard </a>
             </div>
             <div class="col-md-6">
-                <a class="btn btn-success float-right" href="<?= base_url('index.php/admin/new')?>"><i class="fa fa-plus"></i> Nuevo </a>
+                <a class="btn btn-primary float-right" href="<?= base_url('index.php/admin/new')?>"><i class="fa fa-plus"></i> Nuevo </a>
             </div>
         </div><br>
         <div class="card"> 
@@ -44,11 +44,12 @@
                     <th class="d-dm-table-cell d-done"><?= htmlentities($user->RFC)?></th>
                     <th class="d-dm-table-cell d-done"><?= htmlentities($user->contract_date)?></th>
                     <th>
-                        <a class="btn btn-success" href=""><i class="fa fa-eye"></i> Ver</a>
-                        <a class="btn btn-warning" href=""><i class="fa fa-edit"></i> Editar</a>
-                        <a class="btn btn-danger" href=""><i class="fa fa-trash-alt"></i> Eliminar</a>
+                        <a class="btn btn-success" href=""><i class="fa fa-eye"></i></a>
+                        <a class="btn btn-warning" href=""><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-danger" href=""><i class="fa fa-trash-alt"></i></a>
+                        <a class="btn btn-secondary" href=""><i class="fa fa-sync"></i></a>
                     </th>
-                </tr><br>
+                </tr>
                 <?php endforeach; ?>
             
             </table>
