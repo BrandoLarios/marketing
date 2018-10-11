@@ -15,7 +15,7 @@
     <?php $this->load->view("roles_nav/admin.php") ?>
 
     <div class="container">
-        <h2><center>Agregar usuario</center></h2><br>
+        <h2>Agregar usuario</h2><br>
         <form action="<?= base_url('index.php/admin/add') ?>" method="POST">  
         <!-- Inicio de información personal -->
             <h5 class="card-title" for="">Información personales</h5>
@@ -84,7 +84,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Dirección:</span>
                         </div>
-                        <input class="form-control" type="tetx" id="" name="" placeholder="Calle y número" required>
+                        <input class="form-control" type="text" id="" name="direction" placeholder="Calle y número" required>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -146,13 +146,26 @@
                     </div> 
                 </div>
                 <div class="col-md-4">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-4">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">Horario laboral:</span>
+                            <span class="input-group-text" id="basic-addon1">Hora de entrada:</span>
                         </div>
-                        <input class="form-control" type="time" id="" name="inhour">
-                        <input class="form-control" type="time" id="" name="outhour">
+                        <input class="form-control" type="time" id="" name="inhour" required>
                     </div> 
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Hora de salida:</span>
+                        </div>
+                        <input class="form-control" type="time" id="" name="outhour" required>
+                    </div> 
+                </div>
+                <div class="col-md-4">
                 </div>
             </div><br>
         <!-- Inicio de información laboral -->

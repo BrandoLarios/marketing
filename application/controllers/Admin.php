@@ -36,11 +36,10 @@ class Admin extends CI_Controller {
 
             "username"          => $this->input->post('name').$this->input->post('lastname'),
             "password"          => $this->input->post('CURP'),
-            "register_date"     => getdate(),
             "deleted"           => '0'
         );
 
-        $this->AdminModel->add($user);
+        $data['error']=$this->AdminModel->add($user);
         $data['users']=$this->AdminModel->getall();
         $this->load->view('admin/users/list',$data);
     }
