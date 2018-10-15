@@ -146,15 +146,28 @@
                     </div> 
                 </div>
                 <div class="col-md-4">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">Horario laboral:</span>
-                        </div>
-                        <input class="form-control" type="time" id="" name="inhour" value="<?= $user->inhour ?>">
-                        <input class="form-control" type="time" id="" name="outhour" value="<?= $user->outhour ?>">
-                    </div> 
                 </div>
             </div><br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Hora de entrada:</span>
+                        </div>
+                        <!--<input class="form-control" type="time" id="" name="inhour" value="<?= $user->inhour ?>">-->
+                    </div> 
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Hora de salida:</span>
+                        </div>
+                        <!--<input class="form-control" type="time" id="" name="outhour" value="<?= $user->outhour ?>">-->
+                    </div> 
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
         <!-- Inicio de información laboral -->
 
             <!-- Botones para regresar a home y agregar al ususario -->
@@ -163,7 +176,7 @@
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
                     <button class="btn btn-success float-right" type="submit">
-                        Agregar <i class="fa fa-save"></i>
+                        Modificar <i class="fa fa-edit"></i>
                     </button>
                 </div>
             </div> 

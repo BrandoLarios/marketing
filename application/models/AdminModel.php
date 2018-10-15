@@ -49,7 +49,7 @@ class AdminModel extends CI_Model{
 
             '$user[username]', 
             '$user[password]', 
-            '$user[register_date]', 
+            now(), 
             '$user[deleted]'
             )"
         );
