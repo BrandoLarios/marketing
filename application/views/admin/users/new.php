@@ -16,6 +16,9 @@
 
     <div class="container">
         <h2>Agregar usuario</h2><br>
+        <?php if (isset($error)): ?>
+	        <div class="alert alert-danger"><?=$error?></div>
+	    <?php endif; ?>
         <form action="<?= base_url('index.php/admin/add') ?>" method="POST">  
         <!-- Inicio de información personal -->
             <h5 class="card-title" for="">Información personales</h5>
@@ -26,7 +29,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Nombre:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="name" placeholder="Primer nombre" required>
+                        <input class="form-control" type="text" id="" name="name" placeholder="Primer nombre" required value="">
                     </div>
                 </div>
                 <div class="col-md-4">

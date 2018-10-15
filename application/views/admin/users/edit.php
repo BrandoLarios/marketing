@@ -13,10 +13,13 @@
 <body>
     
     <?php $this->load->view("roles_nav/admin.php") ?>
-
+    
     <div class="container">
         <h2>Editar usuario</h2><br>
-        <!----?php echo form_open_multipart(base_url("index.php/admin/modify/".$user->id)); ?>  -->
+        <?php if (isset($error)): ?>
+	        <div class="alert alert-danger"><?=$error?></div>
+	    <?php endif; ?>
+        <form action="<?= base_url('index.php/admin/modify'.$user->id) ?>" method="post">
         <!-- Inicio de información personal -->
             <h5 class="card-title" for="">Información personales</h5>
             <!-- Nombre, apellido y CURP -->
@@ -154,7 +157,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Hora de entrada:</span>
                         </div>
-                        <!--<input class="form-control" type="time" id="" name="inhour" value="<?= $user->inhour ?>">-->
+                        <input class="form-control" type="time" id="" name="inhour" value="<?= $user->inhour ?>">
                     </div> 
                 </div>
                 <div class="col-md-4">
@@ -162,7 +165,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Hora de salida:</span>
                         </div>
-                        <!--<input class="form-control" type="time" id="" name="outhour" value="<?= $user->outhour ?>">-->
+                        <input class="form-control" type="time" id="" name="outhour" value="<?= $user->outhour ?>">
                     </div> 
                 </div>
                 <div class="col-md-4">

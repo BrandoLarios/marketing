@@ -50,7 +50,7 @@
                     </th>
                     <th class="">
                         <label>Fecha de contratación: <?= htmlentities($user->contract_date)?></label><br>
-                        <!--<label>Horario laboral: <?= htmlentities($user->inhour." a ".$user->outhour.".")?></label>-->
+                        <label>Horario laboral: <?= htmlentities($user->inhour." a ".$user->outhour.".")?>
                     </th>
                     <th class="">
                         

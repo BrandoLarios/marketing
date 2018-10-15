@@ -2,6 +2,14 @@
 
 class AdminModel extends CI_Model{
 
+    /*public function compare($email) {
+        return $this->db->query(
+            "SELECT COUNT(email)
+            FROM users
+            WHERE email = $email"
+        )->row();
+    }*/
+
     public function add ($user) {
         return $this->db->query(
             "INSERT INTO users(
@@ -22,8 +30,7 @@ class AdminModel extends CI_Model{
             RFC,          
             inhour,       
             outhour, 
-
-            username,     
+    
             password,     
             register_date,
             deleted      
@@ -47,7 +54,6 @@ class AdminModel extends CI_Model{
             '$user[inhour]', 
             '$user[outhour]',
 
-            '$user[username]', 
             '$user[password]', 
             now(), 
             '$user[deleted]'
