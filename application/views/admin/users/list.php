@@ -44,10 +44,10 @@
                     <th class="d-dm-table-cell d-done"><?= htmlentities($user->RFC)?></th>
                     <th class="d-dm-table-cell d-done"><?= htmlentities($user->contract_date)?></th>
                     <th>
-                        <a class="btn btn-success" href=""><i class="fa fa-eye"></i></a>
-                        <a class="btn btn-warning" href=""><i class="fa fa-edit"></i></a>
+                        <!--<a class="btn btn-success" href=""><i class="fa fa-eye"></i></a>-->
+                        <a class="btn btn-warning" href="<?= base_url('index.php/admin/edit/'.$user->id) ?>"><i class="fa fa-edit"></i></a>
                         <a class="btn btn-danger" href=""><i class="fa fa-trash-alt"></i></a>
-                        <a class="btn btn-secondary" href=""><i class="fa fa-sync"></i></a>
+                        <!--<a class="btn btn-secondary" href=""><i class="fa fa-sync"></i></a>-->
                     </th>
                 </tr>
                 <?php endforeach; ?>

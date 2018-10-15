@@ -52,10 +52,10 @@ class Admin extends CI_Controller {
     //Vista 
     public function edit ($id = null){
         if($id == null){
-            redirect(base_url('index.php/admin/medical/list'));
+            redirect(base_url('index.php/admin/list'));
         }else{
-            $data['user'] = $this->AdminModel->getuser();
-            $this->load->view('admin/users/list',$data);
+            $data['user'] = $this->AdminModel->getuser($id);
+            $this->load->view('admin/users/edit',$data);
         }
     }
     //Modelo

@@ -15,7 +15,7 @@
     <?php $this->load->view("roles_nav/admin.php") ?>
 
     <div class="container">
-        <h2><center>Agregar usuario</center></h2><br>
+        <h2>Agregar usuario</h2><br>
         <form action="<?= base_url('index.php/admin/add') ?>" method="POST">  
         <!-- Inicio de información personal -->
             <h5 class="card-title" for="">Información personales</h5>

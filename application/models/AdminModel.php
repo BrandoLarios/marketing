@@ -68,6 +68,6 @@ class AdminModel extends CI_Model{
             "SELECT * 
             FROM users
             WHERE id=$id"
-        );
+        )->row();
     }
 }

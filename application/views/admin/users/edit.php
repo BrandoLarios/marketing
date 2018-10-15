@@ -15,8 +15,8 @@
     <?php $this->load->view("roles_nav/admin.php") ?>
 
     <div class="container">
-        <h2><center>Agregar usuario</center></h2><br>
-        <form action="<?= base_url('index.php/admin/add') ?>" method="POST">  
+        <h2>Editar usuario</h2><br>
+        <!----?php echo form_open_multipart(base_url("index.php/admin/modify/".$user->id)); ?>  -->
         <!-- Inicio de información personal -->
             <h5 class="card-title" for="">Información personales</h5>
             <!-- Nombre, apellido y CURP -->
@@ -26,7 +26,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Nombre:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="name" placeholder="Primer nombre" required value="<?= (isset($user['name'])) ? $user['name'] : '' ?>">
+                        <input class="form-control" type="text" id="" name="name" required placeholder="Primer nombre" value="<?= $user->name ?>">
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -34,7 +34,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Apellido:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="lastname" placeholder="Primer apellido" required value="<?= (isset($user['lastname'])) ? $user['lastname'] : '' ?>">
+                        <input class="form-control" type="text" id="" name="lastname" placeholder="Primer apellido" required value="<?= $user->lastname ?>">
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -42,7 +42,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">CURP:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="CURP" placeholder="Ingrese 18 caracteres" required value="<?= (isset($user['CURP'])) ? $user['CURP'] : '' ?>">
+                        <input class="form-control" type="text" id="" name="CURP" placeholder="Ingrese 18 caracteres" required value="<?= $user->CURP ?>">
                     </div>
                 </div>
             </div><br>
@@ -53,7 +53,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Correo:</span>
                         </div>
-                        <input class="form-control" type="email" id="" name="email" placeholder="ejemplo@ejem.plo" required>
+                        <input class="form-control" type="email" id="" name="email" placeholder="ejemplo@ejem.plo" required value="<?= $user->email ?>">
                     </div>
                 </div> 
                 <div class="col-md-4">
@@ -61,7 +61,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Telefono:</span>
                         </div>
-                        <input class="form-control" type="tel" id="" name="phone" placeholder="5558855" pattern="[0-9]{7}">
+                        <input class="form-control" type="tel" id="" name="phone" placeholder="5558855" pattern="[0-9]{7}" value="<?= $user->phone ?>">
                     </div> 
                 </div>          
                 <div class="col-md-4">
@@ -69,7 +69,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Celular:</span>
                         </div>
-                        <input class="form-control" type="tel" id="" name="cellphone" placeholder="5558885588" pattern="[0-9]{10}" required>
+                        <input class="form-control" type="tel" id="" name="cellphone" placeholder="5558885588" pattern="[0-9]{10}" required value="<?= $user->cellphone ?>">
                     </div>
                 </div>
             </div><br>
@@ -84,7 +84,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Dirección:</span>
                         </div>
-                        <input class="form-control" type="tetx" id="" name="" placeholder="Calle y número" required>
+                        <input class="form-control" type="text" id="" name="direction" placeholder="Calle y número" required value="<?= $user->direction ?>">
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -92,7 +92,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Colonia:</span>
                         </div>
-                        <input class="form-control" type="tetx" id="" name="colony" placeholder="No abrevie el nombre">
+                        <input class="form-control" type="text" id="" name="colony" placeholder="No abrevie el nombre" value="<?= $user->colony ?>">
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -100,7 +100,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Municipio:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="municipality" placeholder="No abrevie el nombre" required>
+                        <input class="form-control" type="text" id="" name="municipality" placeholder="No abrevie el nombre" required value="<?= $user->municipality ?>">
                     </div>
                 </div>
             </div><br>
@@ -111,7 +111,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Estado:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="state" placeholder="No abrevie el nombre" required>
+                        <input class="form-control" type="text" id="" name="state" placeholder="No abrevie el nombre" required value="<?= $user->state ?>">
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -119,7 +119,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Código postal:</span>
                         </div>
-                        <input class="form-control" type="number" id="" name="cp" placeholder="58585" min="00000" max="99999" pattern="[0-9]{5}" required>
+                        <input class="form-control" type="number" id="" name="cp" placeholder="58585" min="00000" max="99999" pattern="[0-9]{5}" required value="<?= $user->cp ?>">
                     </div>
                 </div>
             </div><br>
@@ -134,7 +134,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">RFC:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="RFC" required>
+                        <input class="form-control" type="text" id="" name="RFC" required value="<?= $user->RFC ?>"> 
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -142,7 +142,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Fecha de contratación:</span>
                         </div>
-                        <input class="form-control" type="date" id="" name="contract_date" min="1960-01-01" value="<?php echo date('Y-m-d');?>" required>
+                        <input class="form-control" type="date" id="" name="contract_date" min="1960-01-01" value="<?= $user->contract_date ?>" required>
                     </div> 
                 </div>
                 <div class="col-md-4">
@@ -150,8 +150,8 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Horario laboral:</span>
                         </div>
-                        <input class="form-control" type="time" id="" name="inhour">
-                        <input class="form-control" type="time" id="" name="outhour">
+                        <input class="form-control" type="time" id="" name="inhour" value="<?= $user->inhour ?>">
+                        <input class="form-control" type="time" id="" name="outhour" value="<?= $user->outhour ?>">
                     </div> 
                 </div>
             </div><br>
