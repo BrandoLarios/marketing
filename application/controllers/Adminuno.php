@@ -6,8 +6,11 @@ class Adminuno extends CI_Controller {
     
 
     public function index () {
-        $this->load->view('adminuno/index');
+        $this->load->view('disegner/index.php');
     }
 
+
+
+    
     
 }
