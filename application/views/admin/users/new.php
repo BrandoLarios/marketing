@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Agregar usuario</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>">
-    <!--<link rel="stylesheet" type="text/css" href="<?php //echo base_url('assets/css/bootstrap.min.css.map'); ?>">-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <title></title>
+    
+    <?php $this->load->view("general/head.php") ?>
 
 </head>
 <body>
     
-    <?php $this->load->view("roles_nav/admin.php") ?>
+    <?php $this->load->view("general/nav.php") ?>
 
     <div class="container">
         <h2>Agregar usuario</h2><br>
         <?php if (isset($error)): ?>
-	        <div class="alert alert-danger"><?=$error?></div>
+	        <div class="alert alert-danger alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <?=$error?>
+            </div>
 	    <?php endif; ?>
         <form action="<?= base_url('index.php/admin/add') ?>" method="POST">  
         <!-- Inicio de información personal -->
@@ -29,7 +31,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Nombre:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="name" placeholder="Primer nombre" required value="">
+                        <input class="form-control" type="text" id="" name="name" placeholder="" required value="<?= (isset($user['name'])) ? $user['name'] : '' ?>">
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -37,7 +39,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Apellido:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="lastname" placeholder="Primer apellido" required>
+                        <input class="form-control" type="text" id="" name="lastname" placeholder="" required value="<?= (isset($user['lastname'])) ? $user['lastname'] : '' ?>">
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -45,7 +47,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">CURP:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="CURP" placeholder="Ingrese 18 caracteres" required>
+                        <input class="form-control" type="text" id="" name="CURP" placeholder="" required value="<?= (isset($user['CURP'])) ? $user['CURP'] : '' ?>">
                     </div>
                 </div>
             </div><br>
@@ -56,7 +58,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Correo:</span>
                         </div>
-                        <input class="form-control" type="email" id="" name="email" placeholder="ejemplo@ejem.plo" required>
+                        <input class="form-control" type="email" id="" name="email" placeholder="ejemplo@ejem.plo" required value="<?= (isset($user['email'])) ? $user['email'] : '' ?>">
                     </div>
                 </div> 
                 <div class="col-md-4">
@@ -64,7 +66,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Telefono:</span>
                         </div>
-                        <input class="form-control" type="tel" id="" name="phone" placeholder="5558855" pattern="[0-9]{7}">
+                        <input class="form-control" type="tel" id="" name="phone" placeholder="" pattern="[0-9]{7}" value="<?= (isset($user['phone'])) ? $user['phone'] : '' ?>">
                     </div> 
                 </div>          
                 <div class="col-md-4">
@@ -72,7 +74,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Celular:</span>
                         </div>
-                        <input class="form-control" type="tel" id="" name="cellphone" placeholder="5558885588" pattern="[0-9]{10}" required>
+                        <input class="form-control" type="tel" id="" name="cellphone" placeholder="" pattern="[0-9]{10}" required value="<?= (isset($user['cellphone'])) ? $user['cellphone'] : '' ?>">
                     </div>
                 </div>
             </div><br>
@@ -87,7 +89,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Dirección:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="direction" placeholder="Calle y número" required>
+                        <input class="form-control" type="text" id="" name="direction" placeholder="Calle y número" required value="<?= (isset($user['direction'])) ? $user['direction'] : '' ?>"> 
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -95,7 +97,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Colonia:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="colony" placeholder="No abrevie el nombre">
+                        <input class="form-control" type="text" id="" name="colony" placeholder="" value="<?= (isset($user['colony'])) ? $user['colony'] : '' ?>">
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -103,7 +105,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Municipio:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="municipality" placeholder="No abrevie el nombre" required>
+                        <input class="form-control" type="text" id="" name="municipality" placeholder="" required value="<?= (isset($user['municipality'])) ? $user['municipality'] : '' ?>">
                     </div>
                 </div>
             </div><br>
@@ -114,7 +116,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Estado:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="state" placeholder="No abrevie el nombre" required>
+                        <input class="form-control" type="text" id="" name="state" placeholder="" required value="<?= (isset($user['state'])) ? $user['state'] : '' ?>">
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -122,7 +124,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Código postal:</span>
                         </div>
-                        <input class="form-control" type="number" id="" name="cp" placeholder="58585" min="00000" max="99999" pattern="[0-9]{5}" required>
+                        <input class="form-control" type="number" id="" name="cp" placeholder="" min="00001" max="99999" pattern="[0-9]{5}" required value="<?= (isset($user['cp'])) ? $user['cp'] : '' ?>">
                     </div>
                 </div>
             </div><br>
@@ -137,7 +139,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">RFC:</span>
                         </div>
-                        <input class="form-control" type="text" id="" name="RFC" required>
+                        <input class="form-control" type="text" id="" name="RFC" required value="<?= (isset($user['RFC'])) ? $user['RFC'] : '' ?>">
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -157,7 +159,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Hora de entrada:</span>
                         </div>
-                        <input class="form-control" type="time" id="" name="inhour" required>
+                        <input class="form-control" type="time" id="" name="inhour" required value="<?= (isset($user['inhour'])) ? $user['inhour'] : '' ?>">
                     </div> 
                 </div>
                 <div class="col-md-4">
@@ -165,7 +167,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Hora de salida:</span>
                         </div>
-                        <input class="form-control" type="time" id="" name="outhour" required>
+                        <input class="form-control" type="time" id="" name="outhour" required value="<?= (isset($user['outhour'])) ? $user['outhour'] : '' ?>">
                     </div> 
                 </div>
                 <div class="col-md-4">
@@ -186,9 +188,7 @@
         </form>
     </div>
 
-
-    <script src="<?php echo base_url('assets/js/jquery-3.3.1.min.js'); ?>"></script>
-    <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
-    <!-- <script src="<?php //echo base_url('assets/js/bootstrap.min.js.map'); ?>"></script> -->
+    <?php $this->load->view("general/scripts.php") ?>
+    
 </body>
 </html>

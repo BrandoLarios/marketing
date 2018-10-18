@@ -4,22 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Agregar usuario</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>">
-    <!--<link rel="stylesheet" type="text/css" href="<?php //echo base_url('assets/css/bootstrap.min.css.map'); ?>">-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <title></title>
+    
+    <?php $this->load->view("general/head.php") ?>
 
 </head>
 <body>
     
-    <?php $this->load->view("roles_nav/admin.php") ?>
+    <?php $this->load->view("general/nav.php") ?>
     
     <div class="container">
         <h2>Editar usuario</h2><br>
         <?php if (isset($error)): ?>
 	        <div class="alert alert-danger"><?=$error?></div>
 	    <?php endif; ?>
-        <form action="<?= base_url('index.php/admin/modify'.$user->id) ?>" method="post">
+        <form action="<?= base_url('index.php/admin/modify/'.$user->id) ?>" method="post">
         <!-- Inicio de información personal -->
             <h5 class="card-title" for="">Información personales</h5>
             <!-- Nombre, apellido y CURP -->
@@ -170,15 +169,32 @@
                 </div>
                 <div class="col-md-4">
                 </div>
+            </div><br>
+        <!-- Fin de información laboral -->
+
+        <!-- Inicio de roles de usuario -->
+            <h5 class="card-title" for="">Roles</h5>
+            <div class="row">
+                <div Class="col-md-4">
+                    <input type="checkbox" name="principaladmin">
+                    Administrador principal <br>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" name="principaladmin">
+                    Administrador secundario <br>
+                </div>
+                <div class="col-md-4">
+                
+                </div>
             </div>
-        <!-- Inicio de información laboral -->
+        <!-- Fin de roles de usuario -->
 
             <!-- Botones para regresar a home y agregar al ususario -->
             <div class="row">
                 <div class="col-md-4"></div>
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
-                    <button class="btn btn-success float-right" type="submit">
+                    <button class="btn btn-success float-right" type="submit" disable>
                         Modificar <i class="fa fa-edit"></i>
                     </button>
                 </div>
@@ -186,9 +202,7 @@
         </form>
     </div>
 
+    <?php $this->load->view("general/scripts.php") ?>
 
-    <script src="<?php echo base_url('assets/js/jquery-3.3.1.min.js'); ?>"></script>
-    <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
-    <!-- <script src="<?php //echo base_url('assets/js/bootstrap.min.js.map'); ?>"></script> -->
 </body>
 </html>

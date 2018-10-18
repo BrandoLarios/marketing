@@ -5,24 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Agregar usuario</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>">
-    <!--<link rel="stylesheet" type="text/css" href="<?php //echo base_url('assets/css/bootstrap.min.css.map'); ?>">-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-        crossorigin="anonymous">
+    <title></title>
+    
+    <?php $this->load->view("general/head.php") ?>
 
 </head>
 
 <body>
-    <?php $this->load->view("roles_nav/admin.php") ?>
+    <?php $this->load->view("general/nav.php") ?>
 
     <div class="container">
-        <h2>Lista de usuarios</h2><br>
+        <h2>Lista de usuarios activos</h2><br>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <a class="btn btn-warning" href="#"><i class="fa fa-arrow-left"></i> Dashboard </a>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
+                <!--<a class="btn btn-warning" href="#"><i class="fa fa-arrow-left"></i> Dashboard </a>-->
+            </div>
+            <div class="col-md-4">
                 <a class="btn btn-primary float-right" href="<?= base_url('index.php/admin/new')?>"><i class="fa fa-plus"></i>Nuevo </a>
             </div>
         </div><br>
@@ -30,9 +31,8 @@
             <table class="table">
                 <tr>
                     <th class="">Información de contacto</th>                    
-                    <th class="">Información residencial</th>
-                    <th class="">Información laboral</th>
-                    <th class="">Roles</th>
+                    <th class="">Horario de contacto</th>
+                    <th class="">Roles </th>
                     <th class="">Acciones</th>
                 </tr>
                 <?php foreach($users as $user): ?>
@@ -44,21 +44,15 @@
                         <label>Cel: <?= htmlentities($user->cellphone)?></label>
                     </th>
                     <th class="">
-                        <label>Dirección: <?= htmlentities($user->colony.",".$user->direction.".")?></label><br>
-                        <label>Estado y municipio: <?= htmlentities($user->municipality.",".$user->state.".")?></label><br>
-                        <label>Codigo postal: <?= htmlentities($user->cp)?></label>
-                    </th>
-                    <th class="">
-                        <label>Fecha de contratación: <?= htmlentities($user->contract_date)?></label><br>
-                        <label>Horario laboral: <?= htmlentities($user->inhour." a ".$user->outhour.".")?>
+                        <label>Horario laboral: <?= htmlentities("De ".$user->inhour." a ".$user->outhour.".")?>
                     </th>
                     <th class="">
                         
                     </th>
-                    <th>
-                        <!--<a class="btn btn-success" href=""><i class="fa fa-eye"></i></a>-->
-                        <a class="btn btn-warning" href="<?= base_url('index.php/admin/edit/'.$user->id) ?>"><i class="fa fa-edit"></i></a>
-                        <a class="btn btn-danger" href=""><i class="fa fa-trash-alt"></i></a>
+                    <th class="">
+                        <!--<a class="btn btn-success" href="">Roles <i class="fa fa-eye"></i></a><br><br>-->
+                        <a class="btn btn-warning" href="<?= base_url('index.php/admin/edit/'.$user->id) ?>">Modificar <i class="fa fa-edit"></i></a><br><br>
+                        <a class="btn btn-danger" href="">Eliminar <i class="fa fa-trash-alt"></i></a>
                         <!--<a class="btn btn-secondary" href=""><i class="fa fa-sync"></i></a>-->
                     </th>
                 </tr>
@@ -67,9 +61,8 @@
         </div>
     </div>
 
-    <script src="<?php echo base_url('assets/js/jquery-3.3.1.min.js'); ?>"></script>
-    <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
-    <!-- <script src="<?php //echo base_url('assets/js/bootstrap.min.js.map'); ?>"></script> -->
+    <?php $this->load->view("general/scripts.php") ?>
+
 </body>
 
 </html>

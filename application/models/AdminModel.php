@@ -2,14 +2,6 @@
 
 class AdminModel extends CI_Model{
 
-    /*public function compare($email) {
-        return $this->db->query(
-            "SELECT COUNT(email)
-            FROM users
-            WHERE email = $email"
-        )->row();
-    }*/
-
     public function add ($user) {
         return $this->db->query(
             "INSERT INTO users(
@@ -34,14 +26,13 @@ class AdminModel extends CI_Model{
             password,     
             register_date,
             deleted      
-            ) 
-            VALUES (
+            ) VALUES (
             '$user[name]',
             '$user[lastname]',
             '$user[email]',
             '$user[CURP]',
-            '$user[phone]', 
-            '$user[cellphone]', 
+            $user[phone], 
+            $user[cellphone], 
              
             '$user[state]', 
             '$user[municipality]', 
@@ -61,7 +52,7 @@ class AdminModel extends CI_Model{
         );
     }
 
-    public function getall() {
+    public function getall () {
         return $this->db->query( 
             "SELECT *
             FROM users
@@ -69,11 +60,65 @@ class AdminModel extends CI_Model{
         )->result();
     }
 
-    public function getuser($id){
+    public function getallactives () {
+        return $this->db->query( 
+            "SELECT *
+            FROM users
+            WHERE deleted = 0
+            order by register_date desc"
+        )->result();
+    }
+
+    public function getalldroped () {
+        return $this->db->query( 
+            "SELECT *
+            FROM users
+            WHERE deleted = 1            
+            order by register_date desc"
+        )->result();
+    }
+
+    public function getuser ($id) {
         return $this->db->query(
             "SELECT * 
             FROM users
             WHERE id=$id"
         )->row();
+    }
+
+    public function modify ($user,$id) {
+        return $this->db->query(
+            "UPDATE users SET 
+
+            name = '$user[name]',         
+            lastname = '$user[lastname]',     
+            email = '$user[email]',        
+            CURP = '$user[CURP]',         
+            phone = $user[phone],        
+            cellphone = $user[cellphone],
+
+            state = '$user[state]',        
+            municipality = '$user[municipality]', 
+            colony = '$user[colony]',       
+            direction = '$user[direction]',    
+            cp = $user[cp], 
+
+            contract_date = '$user[contract_date]',
+            RFC = '$user[RFC]',          
+            inhour = '$user[inhour]',       
+            outhour = '$user[outhour]'
+
+            WHERE id = $id"
+        );
+    }
+
+    public function delete ($id) {
+        return $this->db->query(
+            "UPDATE users SET(
+                deleted
+            ) VALUES (
+                1
+            )"
+        );
     }
 }
