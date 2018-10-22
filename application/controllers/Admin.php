@@ -10,11 +10,11 @@ class Admin extends CI_Controller {
 		
     }
     public function index()  {
-        $this->load->view('admin/users/new');
+        $this->load->view('designer/home');
     }
     //Vista
     public function new () {
-        $this->load->view('admin/users/new');
+        $this->load->view('designer/home');
     }
     //Modelo
     public function add () {
