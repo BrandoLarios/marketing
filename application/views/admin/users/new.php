@@ -14,14 +14,25 @@
     <?php $this->load->view("general/nav.php") ?>
 
     <div class="container">
-        <h2>Agregar usuario</h2><br>
         <?php if (isset($error)): ?>
 	        <div class="alert alert-danger alert-dismissable">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 <?=$error?>
             </div>
 	    <?php endif; ?>
-        <form action="<?= base_url('index.php/admin/add') ?>" method="POST">  
+        <h2>Agregar usuario</h2><br>
+        <div class="row">
+            <div class="col-md-4">
+                <a class="btn btn-warning" href="#"><i class="fa fa-arrow-left"></i> Dashboard </a>
+            </div>
+            <div class="col-md-4">
+                <!--<a class="btn btn-warning" href="#"><i class="fa fa-arrow-left"></i> Dashboard </a>-->
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-primary float-right" href="<?= base_url('index.php/users/list')?>"><i class="fa fa-plus"></i> Lista de usuarios</a>
+            </div>
+        </div><br>
+        <form action="<?= base_url('index.php/users/add') ?>" method="POST">  
         <!-- Inicio de información personal -->
             <h5 class="card-title" for="">Información personales</h5>
             <!-- Nombre, apellido y CURP -->

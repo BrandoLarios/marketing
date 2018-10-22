@@ -18,7 +18,7 @@
         <?php if (isset($error)): ?>
 	        <div class="alert alert-danger"><?=$error?></div>
 	    <?php endif; ?>
-        <form action="<?= base_url('index.php/admin/modify/'.$user->id) ?>" method="post">
+        <form action="<?= base_url('index.php/users/modify/'.$user->id) ?>" method="post">
         <!-- Inicio de información personal -->
             <h5 class="card-title" for="">Información personales</h5>
             <!-- Nombre, apellido y CURP -->
@@ -176,12 +176,26 @@
             <h5 class="card-title" for="">Roles</h5>
             <div class="row">
                 <div Class="col-md-4">
-                    <input type="checkbox" name="principaladmin">
-                    Administrador principal <br>
+                    <input type="checkbox" name="e">
+                    Administrador de empresa <br>
                 </div>
                 <div class="col-md-4">
                     <input type="checkbox" name="principaladmin">
-                    Administrador secundario <br>
+                    Cliente <br>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" name="principaladmin">
+                    Community manager <br>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="checkbox" name="principaladmin">
+                    Generador de contenido <br>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" name="principaladmin">
+                    Diseñador <br>
                 </div>
                 <div class="col-md-4">
                 

@@ -1,6 +1,6 @@
 <?php
 
-class AdminModel extends CI_Model{
+class UsersModel extends CI_Model{
 
     public function add ($user) {
         return $this->db->query(

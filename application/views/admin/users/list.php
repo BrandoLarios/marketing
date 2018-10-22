@@ -24,34 +24,42 @@
                 <!--<a class="btn btn-warning" href="#"><i class="fa fa-arrow-left"></i> Dashboard </a>-->
             </div>
             <div class="col-md-4">
-                <a class="btn btn-primary float-right" href="<?= base_url('index.php/admin/new')?>"><i class="fa fa-plus"></i>Nuevo </a>
+                <a class="btn btn-primary float-right" href="<?= base_url('index.php/users/new')?>"><i class="fa fa-plus"></i>Nuevo </a>
             </div>
         </div><br>
         <div class="card"> 
             <table class="table">
                 <tr>
-                    <th class="">Información de contacto</th>                    
-                    <th class="">Horario de contacto</th>
-                    <th class="">Roles </th>
-                    <th class="">Acciones</th>
+                    <th class="">Nombre</th>
+                    <th class="">Correo</th>                    
+                    <th class="">Fecha de contratación</th>
+                    <th class="">Fecha de registro </th>
+                    <th class="">Roles</th>
+                    <th class="">Actividades</th>
                 </tr>
                 <?php foreach($users as $user): ?>
                 <tr>
                     <th class="">
-                        <label>Nombre: <?= htmlentities($user->name." ".$user->lastname)?></label><br>
-                        <label>Correo: <?= htmlentities($user->email)?></label><br>
-                        <label>Tel: <?= htmlentities($user->phone)?></label><br>
-                        <label>Cel: <?= htmlentities($user->cellphone)?></label>
+                        <label><?= htmlentities($user->name." ".$user->lastname)?></label><br>
+                        <!--<label><?= htmlentities($user->email)?></label><br>
+                        <label><?= htmlentities($user->phone)?></label><br>
+                        <label><?= htmlentities($user->cellphone)?></label>-->
+                    </th>
+                    <th classs="">
+                        <label><?= htmlentities($user->email)?>
                     </th>
                     <th class="">
-                        <label>Horario laboral: <?= htmlentities("De ".$user->inhour." a ".$user->outhour.".")?>
+                        <label><?= htmlentities($user->contract_date)?>
+                    </th>
+                    <th class="">
+                        <label><?= htmlentities($user->register_date)?>
                     </th>
                     <th class="">
                         
                     </th>
                     <th class="">
                         <!--<a class="btn btn-success" href="">Roles <i class="fa fa-eye"></i></a><br><br>-->
-                        <a class="btn btn-warning" href="<?= base_url('index.php/admin/edit/'.$user->id) ?>">Modificar <i class="fa fa-edit"></i></a><br><br>
+                        <a class="btn btn-warning" href="<?= base_url('index.php/users/edit/'.$user->id) ?>">Modificar <i class="fa fa-edit"></i></a><br><br>
                         <a class="btn btn-danger" href="">Eliminar <i class="fa fa-trash-alt"></i></a>
                         <!--<a class="btn btn-secondary" href=""><i class="fa fa-sync"></i></a>-->
                     </th>
