@@ -14,10 +14,23 @@
     <?php $this->load->view("general/nav.php") ?>
     
     <div class="container">
-        <h2>Editar usuario</h2><br>
         <?php if (isset($error)): ?>
 	        <div class="alert alert-danger"><?=$error?></div>
 	    <?php endif; ?>
+        <!--Inicio de botones para regresar al dashboard o ir a la lista-->
+        <div class="row">
+            <div class="col-md-4">
+                <a class="btn btn-warning" href="#"><i class="fa fa-arrow-left"></i> Dashboard </a>
+            </div>
+            <div class="col-md-4">
+                <!--<a class="btn btn-warning" href="#"><i class="fa fa-arrow-left"></i> Dashboard </a>-->
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-primary float-right" href="<?= base_url('index.php/users/list')?>"><i class="fa fa-eye"></i> Lista de usuarios</a>
+            </div>
+        </div><br>
+        <!--Fin de botones para regresar al dashboard o ir a la lista-->
+        <h2>Editar usuario</h2>
         <form action="<?= base_url('index.php/users/modify/'.$user->id) ?>" method="post">
         <!-- Inicio de información personal -->
             <h5 class="card-title" for="">Información personales</h5>
@@ -176,29 +189,30 @@
             <h5 class="card-title" for="">Roles</h5>
             <div class="row">
                 <div Class="col-md-4">
-                    <input type="checkbox" name="e">
+                    <input type="checkbox" name="AA" <?php if(in_array("AA", $roles)) echo "checked";?>>
+                    Administrador de la agencia <br>
+                </div>
+                <div Class="col-md-4">
+                    <input type="checkbox" name="AE" <?php if(in_array("AE", $roles)) echo "checked";?>>
                     Administrador de empresa <br>
                 </div>
                 <div class="col-md-4">
-                    <input type="checkbox" name="principaladmin">
+                    <input type="checkbox" name="C" <?php if(in_array("C", $roles)) echo "checked";?>>
                     Cliente <br>
-                </div>
-                <div class="col-md-4">
-                    <input type="checkbox" name="principaladmin">
-                    Community manager <br>
-                </div>
+                </div>   
             </div><br>
             <div class="row">
                 <div class="col-md-4">
-                    <input type="checkbox" name="principaladmin">
+                    <input type="checkbox" name="CM" <?php if(in_array("CM", $roles)) echo "checked";?>>
+                    Community manager <br>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" name="GC" <?php if(in_array("GC", $roles)) echo "checked";?>>
                     Generador de contenido <br>
                 </div>
                 <div class="col-md-4">
-                    <input type="checkbox" name="principaladmin">
+                    <input type="checkbox" name="D" <?php if(in_array("D", $roles)) echo "checked";?>>
                     Diseñador <br>
-                </div>
-                <div class="col-md-4">
-                
                 </div>
             </div>
         <!-- Fin de roles de usuario -->

@@ -12,10 +12,18 @@
 </head>
 
 <body>
+
     <?php $this->load->view("general/nav.php") ?>
 
+    
+
     <div class="container">
-        <h2>Lista de usuarios activos</h2><br>
+        <?php if (isset($error)): ?>
+	        <div class="alert alert-danger alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <?=$error?>
+            </div>
+	    <?php endif; ?>
         <div class="row">
             <div class="col-md-4">
                 <a class="btn btn-warning" href="#"><i class="fa fa-arrow-left"></i> Dashboard </a>
@@ -24,16 +32,18 @@
                 <!--<a class="btn btn-warning" href="#"><i class="fa fa-arrow-left"></i> Dashboard </a>-->
             </div>
             <div class="col-md-4">
-                <a class="btn btn-primary float-right" href="<?= base_url('index.php/users/new')?>"><i class="fa fa-plus"></i>Nuevo </a>
+                <a class="btn btn-primary float-right" href="<?= base_url('index.php/users/new')?>"><i class="fa fa-plus"></i> Nuevo </a>
             </div>
         </div><br>
+        <h2>Lista de usuarios</h2>
         <div class="card"> 
             <table class="table">
                 <tr>
                     <th class="">Nombre</th>
-                    <th class="">Correo</th>                    
+                    <th class="">Correo</th>
+                    <th class="">CURP Y RFC</th>                    
                     <th class="">Fecha de contratación</th>
-                    <th class="">Fecha de registro </th>
+                    <th class="">Activo/Inactivo</th>
                     <th class="">Roles</th>
                     <th class="">Actividades</th>
                 </tr>
@@ -41,18 +51,24 @@
                 <tr>
                     <th class="">
                         <label><?= htmlentities($user->name." ".$user->lastname)?></label><br>
-                        <!--<label><?= htmlentities($user->email)?></label><br>
-                        <label><?= htmlentities($user->phone)?></label><br>
-                        <label><?= htmlentities($user->cellphone)?></label>-->
                     </th>
                     <th classs="">
                         <label><?= htmlentities($user->email)?>
                     </th>
                     <th class="">
+                        <label>CURP: <?= htmlentities($user->CURP)?>
+                        <label>RFC: <?= htmlentities($user->RFC)?>
+                    </th>
+                    <th class="">
                         <label><?= htmlentities($user->contract_date)?>
                     </th>
                     <th class="">
-                        <label><?= htmlentities($user->register_date)?>
+                        <?php if($user->deleted == '0'): ?>
+                            <label>Activo</label>
+                        <?php endif;?>
+                        <?php if($user->deleted == '1'): ?>
+                            <label>Inactivo</label>
+                        <?php endif;?>
                     </th>
                     <th class="">
                         
@@ -60,7 +76,12 @@
                     <th class="">
                         <!--<a class="btn btn-success" href="">Roles <i class="fa fa-eye"></i></a><br><br>-->
                         <a class="btn btn-warning" href="<?= base_url('index.php/users/edit/'.$user->id) ?>">Modificar <i class="fa fa-edit"></i></a><br><br>
-                        <a class="btn btn-danger" href="">Eliminar <i class="fa fa-trash-alt"></i></a>
+                        <?php if($user->deleted == '0'): ?>
+                        <a class="btn btn-danger" href="<?= base_url('index.php/users/delete/'.$user->id) ?>">Eliminar <i class="fa fa-trash-alt"></i></a>
+                        <?php endif;?>
+                        <?php if($user->deleted == '1'): ?>
+                        <a class="btn btn-success" href="<?= base_url('index.php/users/delete/'.$user->id) ?>">Restaurar <i class="fa fa-sync-alt"></i></a>
+                        <?php endif;?>
                         <!--<a class="btn btn-secondary" href=""><i class="fa fa-sync"></i></a>-->
                     </th>
                 </tr>

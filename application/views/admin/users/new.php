@@ -14,13 +14,14 @@
     <?php $this->load->view("general/nav.php") ?>
 
     <div class="container">
+
         <?php if (isset($error)): ?>
 	        <div class="alert alert-danger alert-dismissable">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 <?=$error?>
             </div>
 	    <?php endif; ?>
-        <h2>Agregar usuario</h2><br>
+        <!--Inicio de botones para regresar al dashboard o ir a la lista-->
         <div class="row">
             <div class="col-md-4">
                 <a class="btn btn-warning" href="#"><i class="fa fa-arrow-left"></i> Dashboard </a>
@@ -29,9 +30,11 @@
                 <!--<a class="btn btn-warning" href="#"><i class="fa fa-arrow-left"></i> Dashboard </a>-->
             </div>
             <div class="col-md-4">
-                <a class="btn btn-primary float-right" href="<?= base_url('index.php/users/list')?>"><i class="fa fa-plus"></i> Lista de usuarios</a>
+                <a class="btn btn-primary float-right" href="<?= base_url('index.php/users/list')?>"><i class="fa fa-eye"></i> Lista de usuarios</a>
             </div>
         </div><br>
+        <!--Fin de botones para regresar al dashboard o ir a la lista-->    
+        <h2>Agregar usuario</h2>
         <form action="<?= base_url('index.php/users/add') ?>" method="POST">  
         <!-- Inicio de información personal -->
             <h5 class="card-title" for="">Información personales</h5>
@@ -186,7 +189,7 @@
             </div><br>
         <!-- Inicio de información laboral -->
 
-            <!-- Botones para regresar a home y agregar al ususario -->
+            <!-- Boton para agregar al ususario -->
             <div class="row">
                 <div class="col-md-4"></div>
                 <div class="col-md-4"></div>
@@ -195,7 +198,8 @@
                         Agregar <i class="fa fa-save"></i>
                     </button>
                 </div>
-            </div> 
+            </div><br> 
+
         </form>
     </div>
 
