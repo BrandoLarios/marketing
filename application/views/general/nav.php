@@ -1,3 +1,12 @@
+
+    <!-- Bootstrap core CSS-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="assets/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="assets/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="assets/css/sb-admin.css" rel="stylesheet">
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <!-- Apartado para imagen y Nombre -->
     <a class="navbar-brand" href="<?= base_url('index.php/admin/index')?>">
@@ -73,4 +82,55 @@
             </ul>
         </div>
     </div>
-</nav><br>
+</nav>
+<div id="wrapper">
+            <!-- Sidebar  areglar las identacion de wrapper fijo-->
+            <ul class="sidebar navbar-nav ">
+                <li class="nav-item active">
+                <a class="nav-link" href="index.php/welcome/Back">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                </li>
+                <li class="nav-item ">
+                <a class="nav-link" href="index.php/welcome/GetCamapanas" >
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Campañas</span>
+                </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="index.php/welcome/GetUsuarios">
+                    <i class="fa fa-users"></i>
+                    <span>Usuarios</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="index.php/welcome/AdminEmpresas">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Empresas</span></a>
+                </li>
+            </ul>
+
+            <div id="content-wrapper">
+
+                <div class="container-fluid">
+            
+         </div>
+<br>
+   <!-- Bootstrap core JavaScript-->
+   <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="assets/js/jquery.easing.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="assets/js/Chart.min.js"></script>
+    <script src="assets/js/jquery.dataTables.js"></script>
+    <script src="assets/js/dataTables.bootstrap4.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="assets/js/sb-admin.min.js"></script>
+
+    <!-- Demo scripts for this page-->
+    <script src="assets/js/demo/datatables-demo.js"></script>
+    <script src="assets/js/demo/chart-area-demo.js"></script>

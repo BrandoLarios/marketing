@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>Diseñador</title>
     <!-- Bootstrap core CSS-->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template-->
@@ -14,10 +14,11 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin.css" rel="stylesheet">
     <?php $this->load->view("general/head.php") ?>
-
+    
 </head>
 <body>
-    
+  
+
     <?php $this->load->view("general/d_nav.php") ?>
 
     <div class="container">
@@ -28,9 +29,15 @@
                 <?=$error?>
             </div>
 	    <?php endif; ?>
-        <form action="<?= base_url('index.php/designer/home') ?>" method="POST">  
+        <form action="<?= base_url('index.php/designer/index') ?>" method="POST">  
+        <!--Barra de Direccion-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="#">Inicio</a>
+            </li>
+            <li class="breadcrumb-item active">Principal</li>
+          </ol>
         <!-- Inicio de Diseñador -->
-            <h5 class="card-title" for="">Información</h5>
             <div class="row">
             <div class="col-xl-3 col-sm-6 mb-3">
               <div class="card text-white bg-primary o-hidden h-100">
@@ -38,7 +45,7 @@
                   <div class="card-body-icon">
                     <i class="fas fa-fw fa-comments"></i>
                   </div>
-                  <div class="mr-5">26 New Messages!</div>
+                  <div class="mr-5">26 Nuevos Mensajes!</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="#">
                   <span class="float-left">View Details</span>
@@ -54,9 +61,9 @@
                   <div class="card-body-icon">
                     <i class="fas fa-fw fa-list"></i>
                   </div>
-                  <div class="mr-5">11 New Tasks!</div>
+                  <div class="mr-5">11 Nuevas Tareas!</div>
                 </div>
-                <a class="card-footer text-white clearfix small z-1" href="#">
+                <a class="card-footer text-white clearfix small z-1" href="<?= base_url('index.php/designer/TareasP') ?>">
                   <span class="float-left">View Details</span>
                   <span class="float-right">
                     <i class="fas fa-angle-right"></i>
@@ -70,7 +77,7 @@
                   <div class="card-body-icon">
                     <i class="fas fa-fw fa-bell"></i>
                   </div>
-                  <div class="mr-5">13 New Notifications!</div>
+                  <div class="mr-5">13 Nuevas Noticias !</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="#">
                   <span class="float-left">View Details</span>
