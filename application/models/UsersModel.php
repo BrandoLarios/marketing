@@ -60,24 +60,6 @@ class UsersModel extends CI_Model{
         )->result();
     }
 
-    public function getallactives () {
-        return $this->db->query( 
-            "SELECT *
-            FROM users
-            WHERE deleted = 0
-            order by register_date desc"
-        )->result();
-    }
-
-    public function getalldroped () {
-        return $this->db->query( 
-            "SELECT *
-            FROM users
-            WHERE deleted = 1            
-            order by register_date desc"
-        )->result();
-    }
-
     public function getuser ($id) {
         return $this->db->query(
             "SELECT * 
@@ -114,11 +96,13 @@ class UsersModel extends CI_Model{
 
     public function delete ($id) {
         return $this->db->query(
-            "UPDATE users SET(
-                deleted
-            ) VALUES (
-                1
-            )"
+            "UPDATE users SET deleted = '1' WHERE id = $id"
+        );
+    }
+
+    public function active ($id) {
+        return $this->db->query(
+            "UPDATE users SET deleted = '0' WHERE id = $id"
         );
     }
 }

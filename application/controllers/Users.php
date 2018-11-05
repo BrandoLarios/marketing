@@ -5,7 +5,8 @@ class Users extends CI_Controller {
     function __construct(){
 		parent:: __construct();
 		$this->load->library('session');
-		$this->load->model("UsersModel");
+        $this->load->model("UsersModel");
+        $this->load->model("RolesModel");
 		$this->load->database();
 		
     }
@@ -50,7 +51,7 @@ class Users extends CI_Controller {
         endforeach;
         if($count==0){
             $this->UsersModel->add($user);
-            $data['users']= $this->UsersModel->getallactives();
+            $data['users']= $this->UsersModel->getall();
             $this->load->view('admin/users/list',$data);
         }else{
             $data['user'] = $user;
@@ -61,6 +62,7 @@ class Users extends CI_Controller {
     //Vista
     public function list () {
         $data['users']=$this->UsersModel->getall();
+        $data['roles']=$this->RolesModel->getUsersRoles();
         $this->load->view('admin/users/list',$data);
     }
     //Vista 
@@ -68,6 +70,7 @@ class Users extends CI_Controller {
         if($id == null ){
             redirect(base_url('index.php/admin/list'));
         }else{
+            $data['roles'] = $this->RolesModel->getUserRoles($id);
             $data['user'] = $this->UsersModel->getuser($id);
             $this->load->view('admin/users/edit',$data);
         }
@@ -104,11 +107,22 @@ class Users extends CI_Controller {
                 "password"          => strtoupper($this->input->post('CURP')),
                 "deleted"           => '0'
             );
+            //Datos post de la vista
+            $roles = array(
+                'AA' => null !== $this->input->post('AA'),
+                'AE' => null !== $this->input->post('AE'),
+                'CM' => null !== $this->input->post('CM'),
+                'GC' => null !== $this->input->post('GC'),
+                'D'  => null !== $this->input->post('D'),
+                'C'  => null !== $this->input->post('C'),
+            );
             //Compara si hay modificacion en el correo
             if($oneuser->email == strtolower($this->input->post('email')) ){
                 //Modifica los datos del usuario
                 $this->UsersModel->modify($user,$id);
+                $this->RolesModel->updateUserRoles($id,$roles);
                 $data['users']= $this->UsersModel->getall();
+                $data['roles']=$this->RolesModel->getUsersRoles();
                 $this->load->view('admin/users/list',$data);
             }else{
                 $count=0;
@@ -120,7 +134,9 @@ class Users extends CI_Controller {
                 //Compara para saber si el correo ya esta registrado
                 if($count==0){
                     $this->UsersModel->modify($user,$id);
-                    $data['users']= $this->UsersModel->getall();
+                    $this->RolesModel->updateUserRoles($id,$roles);
+                    $data['users']=$this->UsersModel->getall();
+                    $data['roles']=$this->RolesModel->getUsersRoles();
                     $this->load->view('admin/users/list',$data);
                 }else{
                     $data['user'] = $this->UsersModel->getuser($id);
@@ -136,10 +152,28 @@ class Users extends CI_Controller {
 
     public function delete ($id = null) {
         if($id == null){
-            redirect(base_url('index.php/admin/list'));
+            redirect(base_url('index.php/users/list'));
         }else{
             $data['user'] = $this->UsersModel->getuser($id);
             $this->load->view('admin/users/delete',$data);
+        }
+    }
+
+    public function  drop ($id = null) {
+        if($id == null){
+            redirect(base_url('index.php/users/list'));
+        }else{
+            $this->UsersModel->delete($id);
+            redirect(base_url('index.php/users/list'));
+        }
+    }
+
+    public function  active ($id = null) {
+        if($id == null){
+            redirect(base_url('index.php/users/list'));
+        }else{
+            $this->UsersModel->active($id);
+            redirect(base_url('index.php/users/list'));
         }
     }
 }
