@@ -40,8 +40,7 @@
             <table class="table">
                 <tr>
                     <th class="">Nombre</th>
-                    <th class="">Correo</th>
-                    <th class="">CURP Y RFC</th>                    
+                    <th class="">Correo</th>                  
                     <th class="">Fecha de contratación</th>
                     <th class="">Status</th>
                     <th class="">Roles</th>
@@ -54,10 +53,6 @@
                     </th>
                     <th classs="">
                         <label><?= htmlentities($user->email)?>
-                    </th>
-                    <th class="">
-                        <label>CURP: <?= htmlentities($user->CURP)?>
-                        <label>RFC: <?= htmlentities($user->RFC)?>
                     </th>
                     <th class="">
                         <label><?= htmlentities($user->contract_date)?>

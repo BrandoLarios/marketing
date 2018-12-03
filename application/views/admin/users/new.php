@@ -95,8 +95,8 @@
         <!-- Fin de información personal -->
 
         <!-- Inicio de información de residencial -->
-            <!-- Dirección, colonia y municipio -->
             <h5 class="card-title" for="">Información residencial</h5>
+            <!-- Dirección, colonia y municipio -->
             <div class="row">
                 <div class="col-md-4">
                     <div class="input-group">

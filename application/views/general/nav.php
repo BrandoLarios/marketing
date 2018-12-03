@@ -27,7 +27,7 @@
                         Empresas <i class="fa fa-building navbar-icon"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="<?= base_url('index.php/') ?>">Agregar empresa</a>
+                        <a class="dropdown-item" href="<?= base_url('index.php/companies/new') ?>">Agregar empresa</a>
                         <a class="dropdown-item" href="#">Administrar empresas</a>
                     </div>
                 </li>
