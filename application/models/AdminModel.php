@@ -1,12 +1,12 @@
 <?php
 
-class UsersModel extends CI_Model{
+class AdminModel extends CI_Model{
 
     public function getall () {
         return $this->db->query( 
             "SELECT *
-            FROM users
-            order by register_date desc"
+            FROM (users u join user_roles ur ON u.id = ur.id_user) join roles r ON ur.id_role = r.id
+            WHERE r.letters = 'AA' OR r.letters = 'AE'"
         )->result();
     }
 

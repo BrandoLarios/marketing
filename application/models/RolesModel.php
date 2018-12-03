@@ -2,6 +2,7 @@
 
 class RolesModel extends CI_Model{
 
+
     public function getUsersRoles () {
         return $this->db->query( 
             "SELECT u.id as id_user, r.name as name

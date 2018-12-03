@@ -13,7 +13,7 @@
 
 <body>
 
-    <?php $this->load->view("general/nav.php") ?>
+    <?php $this->load->view("general/rootnav.php") ?>
 
     
 
